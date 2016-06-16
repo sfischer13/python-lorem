@@ -31,6 +31,8 @@ __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
 __version__ = '0.0.1'
 
+__all__ = ['sentence', 'paragraph', 'text']
+
 
 def sentence(*args, **kwargs):
     return _Lorem().sentence(*args, **kwargs)
