@@ -23,12 +23,24 @@
 
 The project was initiated by Stefan Fischer.
 
-Note
-----
-    This package is still a work in progress.
-
 """
+
+from .text import TextLorem as _Lorem
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
 __version__ = '0.0.1'
+
+__all__ = ['sentence', 'paragraph', 'text']
+
+
+def sentence(*args, **kwargs):
+    return _Lorem().sentence(*args, **kwargs)
+
+
+def paragraph(*args, **kwargs):
+    return _Lorem().paragraph(*args, **kwargs)
+
+
+def text(*args, **kwargs):
+    return _Lorem().text(*args, **kwargs)

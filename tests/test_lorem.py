@@ -21,6 +21,12 @@ class TestLorem(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_sentence_001(self):
+        self.assertTrue(lorem.sentence()[0].isupper())
+
+    def test_sentence_002(self):
+        self.assertEqual(lorem.sentence()[-1], '.')
+
 
 if __name__ == '__main__':
     import sys
