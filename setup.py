@@ -21,7 +21,7 @@ test_requirements = [
 
 setup(
     name='lorem',
-    version='0.1.0',
+    version='0.1.1',
     description='Generator for random text that looks like Latin.',
     long_description=readme + '\n\n' + history,
     author='Stefan Fischer',

@@ -29,7 +29,7 @@ from .text import TextLorem as _Lorem
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 __all__ = ['sentence', 'paragraph', 'text']
 
