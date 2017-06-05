@@ -1,12 +1,18 @@
+sudo: false
+
 language: python
-python: 3.5
 
-env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=pypy3
+python:
+  - 3.3
+  - 3.4
+  - 3.5
+  - 3.6
+  - nightly
 
-install: pip install -U tox
+install:
+  - pip install .
+  - pip install -r requirements.txt
 
-script: tox
+script:
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.3 || $TRAVIS_PYTHON_VERSION == 3.4 ]]; then py.test; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.5 || $TRAVIS_PYTHON_VERSION == 3.6 || $TRAVIS_PYTHON_VERSION == nightly ]]; then pytest; fi
