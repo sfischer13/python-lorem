@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
-
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -13,29 +11,13 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-]
+requirements = []
 
-test_requirements = [
-]
+test_requirements = []
 
 setup(
-    name='lorem',
-    version='0.1.1',
-    description='Generator for random text that looks like Latin.',
-    long_description=readme + '\n\n' + history,
-    author='Stefan Fischer',
     author_email='sfischer13@ymail.com',
-    url='https://github.com/sfischer13/python-lorem',
-    packages=[
-        'lorem',
-    ],
-    package_dir={'lorem': 'lorem'},
-    include_package_data=True,
-    install_requires=requirements,
-    license='MIT',
-    zip_safe=False,
-    keywords='lorem ipsum random text placeholder',
+    author='Stefan Fischer',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -55,6 +37,17 @@ setup(
         'Topic :: Text Processing',
         'Topic :: Text Processing :: Linguistic',
     ],
+    description='Generator for random text that looks like Latin.',
+    include_package_data=True,
+    install_requires=requirements,
+    keywords='lorem ipsum random text placeholder',
+    license='MIT',
+    long_description=readme + '\n\n' + history,
+    name='lorem',
+    package_dir={'lorem': 'lorem'},
+    packages=['lorem'],
     test_suite='tests',
-    tests_require=test_requirements
-)
+    tests_require=test_requirements,
+    url='https://github.com/sfischer13/python-lorem',
+    version='0.1.1',
+    zip_safe=False)
