@@ -35,12 +35,12 @@ __all__ = ['sentence', 'paragraph', 'text']
 
 
 def sentence(*args, **kwargs):
-    return _Lorem().sentence(*args, **kwargs)
+    return _Lorem(*args, **kwargs).sentence()
 
 
 def paragraph(*args, **kwargs):
-    return _Lorem().paragraph(*args, **kwargs)
+    return _Lorem(*args, **kwargs).paragraph()
 
 
 def text(*args, **kwargs):
-    return _Lorem().text(*args, **kwargs)
+    return _Lorem(*args, **kwargs).text()
