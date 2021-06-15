@@ -26,6 +26,8 @@ The project was initiated by Stefan Fischer.
 """
 
 from .text import TextLorem as _Lorem
+from collections.abc import Sequence
+from typing import Tuple
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
@@ -34,13 +36,61 @@ __version__ = '0.1.1-testing'
 __all__ = ['sentence', 'paragraph', 'text']
 
 
-def sentence(*args, **kwargs):
-    return _Lorem(*args, **kwargs).sentence()
+def sentence(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+) -> str:
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).sentence()
 
 
-def paragraph(*args, **kwargs):
-    return _Lorem(*args, **kwargs).paragraph()
+def paragraph(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+):
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).paragraph()
 
 
-def text(*args, **kwargs):
-    return _Lorem(*args, **kwargs).text()
+def text(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+):
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).text()
