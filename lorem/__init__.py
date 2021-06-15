@@ -24,23 +24,79 @@
 The project was initiated by Stefan Fischer.
 
 """
+import sys
 
+if sys.version_info.minor >= 9:
+    # INFO: See this for more info
+    # https://www.python.org/dev/peps/pep-0585/
+    from collections.abc import Sequence
+    Tuple = tuple
+else:
+    from typing import Tuple, Sequence
 from .text import TextLorem as _Lorem
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 __all__ = ['sentence', 'paragraph', 'text']
 
 
-def sentence(*args, **kwargs):
-    return _Lorem().sentence(*args, **kwargs)
+def sentence(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+) -> str:
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).sentence()
 
 
-def paragraph(*args, **kwargs):
-    return _Lorem().paragraph(*args, **kwargs)
+def paragraph(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+):
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).paragraph()
 
 
-def text(*args, **kwargs):
-    return _Lorem().text(*args, **kwargs)
+def text(
+    wsep: str = ' ',
+    ssep: str = ' ',
+    psep: str = '\n\n',
+    srange: Tuple[int, int] = (4, 8),
+    prange: Tuple[int, int] = (5, 10),
+    trange: Tuple[int, int] = (3, 6),
+    words: Sequence[str] = None
+):
+    return _Lorem(
+        wsep=wsep,
+        ssep=ssep,
+        psesp=psep,
+        srange=srange,
+        prange=prange,
+        trange=trange,
+        words=words
+    ).text()
