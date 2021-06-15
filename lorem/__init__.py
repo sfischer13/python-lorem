@@ -31,7 +31,7 @@ from typing import Tuple
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'
-__version__ = '0.1.1-testing'
+__version__ = '0.1.2'
 
 __all__ = ['sentence', 'paragraph', 'text']
 
