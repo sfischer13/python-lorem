@@ -24,10 +24,16 @@
 The project was initiated by Stefan Fischer.
 
 """
+import sys
 
+if sys.version_info.minor >= 9:
+    # INFO: See this for more info
+    # https://www.python.org/dev/peps/pep-0585/
+    from collections.abc import Sequence
+    Tuple = tuple
+else:
+    from typing import Tuple, Sequence
 from .text import TextLorem as _Lorem
-from collections.abc import Sequence
-from typing import Tuple
 
 __author__ = 'Stefan Fischer'
 __email__ = 'sfischer13@ymail.com'

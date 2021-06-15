@@ -1,7 +1,6 @@
 import random
 
-from collections.abc import Sequence
-from typing import Tuple
+from . import Sequence, Tuple
 from .data import WORDS
 
 
